@@ -15,14 +15,17 @@ public class BouncyBall : MonoBehaviour
     public GameObject[] livesImage;
 
     public GameObject gameOverPanel;
+    public GameObject youWinPanel;
 
-    
+    int brickCount;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gameOverPanel.SetActive(false);
+        brickCount = FindAnyObjectByType<LevelGenerator>().transform.childCount;
+        rb.linearVelocity = Vector2.down * 5f;
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class BouncyBall : MonoBehaviour
             else 
             {
                 transform.position = Vector3.zero;
-                rb.linearVelocity = Vector3.zero;
+                rb.linearVelocity = Vector2.down * 5f;
                 lives--;
                 livesImage[lives].SetActive(false);
             }
@@ -58,6 +61,12 @@ public class BouncyBall : MonoBehaviour
             Destroy(collision.gameObject);
             score += 10;
             scoreTxt.text = score.ToString("00000");
+            brickCount--;
+            if (brickCount <= 0)
+            {
+                youWinPanel.SetActive(true);
+                Time.timeScale = 0;
+            }
         }
     }
 
