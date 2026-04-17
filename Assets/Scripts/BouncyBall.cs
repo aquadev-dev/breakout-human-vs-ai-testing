@@ -17,6 +17,10 @@ public class BouncyBall : MonoBehaviour
     public GameObject gameOverPanel;
     public GameObject youWinPanel;
 
+    public AudioSource ballBounceSource;
+    public AudioClip ballBounceClip;
+    public AudioClip wallBounceClip;
+
     int brickCount;
 
 
@@ -56,19 +60,28 @@ public class BouncyBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Brick"))
+        switch (collision.gameObject.tag)
         {
-            Destroy(collision.gameObject);
-            score += 10;
-            scoreTxt.text = score.ToString("00000");
-            brickCount--;
-            if (brickCount <= 0)
-            {
-                youWinPanel.SetActive(true);
-                Time.timeScale = 0;
-            }
+            case "Brick":
+                Destroy(collision.gameObject);
+                score += 10;
+                scoreTxt.text = score.ToString("00000");
+                brickCount--;
+                ballBounceSource.PlayOneShot(ballBounceClip);
+                if (brickCount <= 0)
+                {
+                    youWinPanel.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                break;
+            case "Wall":
+                ballBounceSource.PlayOneShot(wallBounceClip);
+                break;
+            default:
+                break;
         }
-    }
+
+    }   
 
     void GameOver() 
     {
