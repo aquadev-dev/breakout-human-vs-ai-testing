@@ -41,6 +41,6 @@ public class LevelGenerator : MonoBehaviour
 
     public void MainMenu() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 }

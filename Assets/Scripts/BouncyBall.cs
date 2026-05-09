@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BouncyBall : MonoBehaviour
 {
@@ -28,8 +29,10 @@ public class BouncyBall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        brickCount = FindAnyObjectByType<LevelGenerator>().transform.childCount;
+        brickCount = FindAnyObjectByType<LevelGenerator>().transform.childCount + 15;
         rb.linearVelocity = Vector2.down * 5f;
+        Scene CurrentScene = SceneManager.GetActiveScene();
+        Debug.Log(CurrentScene.name);
     }
 
     // Update is called once per frame
@@ -64,9 +67,8 @@ public class BouncyBall : MonoBehaviour
         {
             case "Brick":
                 Destroy(collision.gameObject);
-                score += 10;
-                scoreTxt.text = score.ToString("00000");
-                brickCount--;
+                updateScore();
+                updateBrickCount();
                 ballBounceSource.PlayOneShot(ballBounceClip);
                 if (brickCount <= 0)
                 {
@@ -81,7 +83,18 @@ public class BouncyBall : MonoBehaviour
                 break;
         }
 
-    }   
+    }
+
+    public void updateScore() 
+    {
+        score += 10;
+        scoreTxt.text = score.ToString("00000");
+    }
+
+    public void updateBrickCount() 
+    {
+        brickCount--;
+    }
 
     void GameOver() 
     {
