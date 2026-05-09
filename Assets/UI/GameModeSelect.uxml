@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:engine="UnityEngine.UIElements">
+    <ui:Style src="GameModeSelect.uss" />
+    <ui:VisualElement name="root" class="gamemode-select-root">
+        <ui:Label name="titleLabel" text="Game Modes" class="title-label" />
+        <ui:VisualElement class="button-container">
+            <ui:Button name="breakoutButton" text="Breakout" class="menu-button" />
+            <ui:Button name="cavityButton" text="Cavity" class="menu-button" />
+            <ui:Button name="doubleButton" text="Double" class="menu-button" />
+            <ui:Button name="backButton" text="Back to Menu" class="menu-button back-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:engine="UnityEngine.UIElements">
+    <ui:Style src="TitleScreen.uss" />
+    <ui:VisualElement name="root" class="title-screen-root">
+        <ui:Label name="titleLabel" text="Breakout: Human vs AI" class="title-label" />
+        <ui:VisualElement class="button-container">
+            <ui:Button name="playButton" text="Play Game" class="menu-button" />
+            <ui:Button name="quitButton" text="Quit Game" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

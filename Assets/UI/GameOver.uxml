@@ -2,6 +2,7 @@
     <ui:Style src="GameOver.uss" />
     <ui:VisualElement name="root" class="game-over-screen">
         <ui:Label text="GAME OVER" class="game-over-title" />
-        <ui:Button name="restartButton" text="Restart Game" class="restart-button" />
+        <ui:Button name="restartButton" text="Restart Game" class="menu-button" />
+        <ui:Button name="mainMenuButton" text="Main Menu" class="menu-button" />
     </ui:VisualElement>
 </ui:UXML>

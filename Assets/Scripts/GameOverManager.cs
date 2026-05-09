@@ -7,6 +7,7 @@ public class GameOverManager : MonoBehaviour
     private UIDocument uiDocument;
     private VisualElement root;
     private Button restartButton;
+    private Button mainMenuButton;
 
     private void Awake()
     {
@@ -21,6 +22,12 @@ public class GameOverManager : MonoBehaviour
         {
             restartButton.clicked += RestartGame;
         }
+
+        mainMenuButton = root.Q<Button>("mainMenuButton");
+        if (mainMenuButton != null)
+        {
+            mainMenuButton.clicked += GoToMainMenu;
+        }
     }
 
     public void ShowGameOver()
@@ -34,5 +41,11 @@ public class GameOverManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("TitleScreen");
     }
 }

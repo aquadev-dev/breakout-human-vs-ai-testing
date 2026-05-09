@@ -11,11 +11,26 @@ public class DeathZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ball") || other.GetComponent<BallController>() != null)
+        BallController ball = other.GetComponent<BallController>();
+        if (ball != null)
         {
-            if (gameManager != null)
+            if (gameManager is DoubleGameManager dgm)
             {
-                gameManager.LoseLife();
+                dgm.BallLost(other.gameObject);
+            }
+            else
+            {
+                if (other.gameObject.name == "TrappedBall")
+                {
+                    Destroy(other.gameObject);
+                }
+                else
+                {
+                    if (gameManager != null)
+                    {
+                        gameManager.LoseLife();
+                    }
+                }
             }
         }
     }

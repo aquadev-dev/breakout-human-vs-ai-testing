@@ -1,7 +1,3 @@
-/*
-2026-05-09 AI-Tag
-This was created with the help of Assistant, a Unity Artificial Intelligence product.
-*/
 .game-over-screen {
     flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.8);
@@ -16,19 +12,21 @@ This was created with the help of Assistant, a Unity Artificial Intelligence pro
     margin-bottom: 40px;
 }
 
-.restart-button {
+.menu-button {
     background-color: #0078D4;
     color: white;
     font-size: 24px;
     padding: 10px 40px;
     border-radius: 5px;
     -unity-font-style: bold;
+    margin-bottom: 15px;
+    width: 300px;
 }
 
-.restart-button:hover {
+.menu-button:hover {
     background-color: #005A9E;
 }
 
-.restart-button:active {
+.menu-button:active {
     background-color: #004578;
 }

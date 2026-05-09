@@ -17,7 +17,7 @@ public class BreakoutGameManager : MonoBehaviour
     public int Score
     {
         get => m_Score;
-        private set => m_Score = value;
+        protected set => m_Score = value;
     }
 
     [SerializeField, DontCreateProperty]
@@ -27,7 +27,7 @@ public class BreakoutGameManager : MonoBehaviour
     public int Lives
     {
         get => m_Lives;
-        private set => m_Lives = value;
+        protected set => m_Lives = value;
     }
 
     private Color[] rowColors = new Color[]
@@ -50,7 +50,7 @@ public class BreakoutGameManager : MonoBehaviour
         }
     }
 
-    public void SpawnBricks()
+    public virtual void SpawnBricks()
     {
         for (int r = 0; r < rows; r++)
         {
@@ -74,7 +74,7 @@ public class BreakoutGameManager : MonoBehaviour
         Score += amount;
     }
 
-    public void LoseLife()
+    public virtual void LoseLife()
     {
         Lives--;
         if (Lives <= 0)
@@ -87,17 +87,21 @@ public class BreakoutGameManager : MonoBehaviour
         }
     }
 
-    private void ResetBall()
+    protected virtual void ResetBall()
     {
-        BallController ball = Object.FindAnyObjectByType<BallController>();
-        PaddleController paddle = Object.FindAnyObjectByType<PaddleController>();
-        if (ball != null && paddle != null)
+        GameObject ballObj = GameObject.Find("Ball");
+        if (ballObj != null)
         {
-            ball.ResetBall(paddle.transform);
+            BallController ball = ballObj.GetComponent<BallController>();
+            PaddleController paddle = Object.FindAnyObjectByType<PaddleController>();
+            if (ball != null && paddle != null)
+            {
+                ball.ResetBall(paddle.transform);
+            }
         }
     }
 
-    private void GameOver()
+    protected virtual void GameOver()
     {
         Debug.Log("Game Over!");
         GameOverManager gameOverManager = Object.FindAnyObjectByType<GameOverManager>();
@@ -106,4 +110,4 @@ public class BreakoutGameManager : MonoBehaviour
             gameOverManager.ShowGameOver();
         }
     }
-}
+    }

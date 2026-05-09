@@ -1,0 +1,49 @@
+/*
+2026-05-09 AI-Tag
+This was created with the help of Assistant, a Unity Artificial Intelligence product.
+*/
+.gamemode-select-root {
+    flex-grow: 1;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-label {
+    font-size: 80px;
+    -unity-font-style: bold;
+    margin-bottom: 60px;
+}
+
+.button-container {
+    width: 400px;
+}
+
+.menu-button {
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #fff;
+    border-width: 2px;
+    border-color: #555;
+    border-radius: 10px;
+}
+
+.menu-button:hover {
+    background-color: #555;
+    border-color: #777;
+}
+
+.menu-button:active {
+    background-color: #222;
+}
+
+.back-button {
+    margin-top: 20px;
+    background-color: #552222;
+}
+
+.back-button:hover {
+    background-color: #773333;
+}
