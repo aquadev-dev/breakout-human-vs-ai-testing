@@ -33,6 +33,7 @@ public class BouncyBall : MonoBehaviour
         rb.linearVelocity = Vector2.down * 5f;
         Scene CurrentScene = SceneManager.GetActiveScene();
         Debug.Log(CurrentScene.name);
+        Time.timeScale = 1.0f;
     }
 
     // Update is called once per frame
