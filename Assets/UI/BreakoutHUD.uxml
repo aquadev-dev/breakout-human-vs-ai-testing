@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:engine="UnityEngine.UIElements">
+    <ui:Style src="BreakoutHUD.uss" />
+    <ui:VisualElement name="root" class="hud-container">
+        <ui:VisualElement name="score-container" style="flex-direction: row;">
+            <ui:Label text="Score: " class="hud-label" />
+            <ui:Label name="score-label" text="0" class="hud-label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="lives-container" style="flex-direction: row;">
+            <ui:Label text="Lives: " class="hud-label" />
+            <ui:Label name="lives-label" text="5" class="hud-label" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
