@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game/GameModes/Cavity.unity
     guid: 4eeb7c074d531884cbcaf001f034a173
   - enabled: 1
-    path: Assets/Scenes/Game/GameModes/Progressive.unity
+    path: Assets/Scenes/Game/GameModes/Double.unity
     guid: 205655d9363b62e4ca4b1c85daf2392a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

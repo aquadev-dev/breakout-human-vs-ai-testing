@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 1053590414}
   - component: {fileID: 1053590413}
   m_Layer: 5
-  m_Name: Progressive
+  m_Name: Double
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 1378629014}
   - component: {fileID: 1378629013}
   m_Layer: 5
-  m_Name: ProgressiveText
+  m_Name: Double
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Progressive
+  m_text: Double
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9a6f15e6e34b5824baf34cd2c4f2c9e1, type: 2}
   m_sharedMaterial: {fileID: -1533742961116329612, guid: 9a6f15e6e34b5824baf34cd2c4f2c9e1, type: 2}
